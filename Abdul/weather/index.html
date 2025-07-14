@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Weather </title>
+</head>
+<body>
+
+    <!-- https://api.openweathermap.org/data/2.5/weather?q=hapur&appid=e7cad5604b073da5034c630cb6f34b77 -->
+      
+    <div class="Card">
+        <div class="search">
+             <input type="text" placeholder="Enter city Name"
+             spellcheck="false">
+             <button><img src="./weather-app-img/images/search.png"></button>
+        </div>
+        <div class="weather">
+            <img src="./weather-app-img/images/rain.png" class="weather-icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+            <div class="col">
+                <img src="./weather-app-img/images/humidity.png">
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>    
+            <div class="col">
+                <img src="./weather-app-img/images/wind.png">
+                <div>
+                    <p class="wind">50 km/h</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>    
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    const apikey = "e7cad5604b073da5034c630cb6f34b77";
+    const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    const searchBox = document.querySelector(".search input");
+    const searchBtn = document.querySelector(".search button");
+    const weatherIcon = document.querySelector(".weather-icon");
+    const card = document.querySelector(".Card");
+
+    async function checkWeather(city){
+        const response = await fetch (apiurl + city + `&appid=${apikey}`);
+        var data = await response.json();
+
+        console.log(data);
+
+
+
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+   if(data.weather[0].main == "Clouds"){
+     weatherIcon.src = "./weather-app-img/images/clouds.png";
+     card.style.backgroundImage = "url('https://images.unsplash.com/photo-1750863491919-b18bc2c98e9f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+      card.style.backgroundSize = "cover";
+     card.style.backgroundPosition = "center";
+     card.style.backgroundRepeat = "no-repeat";
+     card.style.backgroundAttachment = "fixed";
+   }
+
+   else if(data.weather[0].main == "Clear"){
+    weatherIcon.src = "./weather-app-img/images/clear.png";
+    card.style.backgroundImage = "url('https://plus.unsplash.com/premium_photo-1749734884564-04dc6c913798?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+    card.style.backgroundSize = "cover";
+     card.style.backgroundPosition = "center";
+     card.style.backgroundRepeat = "no-repeat";
+     card.style.backgroundAttachment = "fixed";
+   }
+
+   else if(data.weather[0].main == "Rain"){
+    weatherIcon.src = "./weather-app-img/images/rain.png";
+     card.style.backgroundImage = "url('https://images.unsplash.com/photo-1544365558-35aa4afcf11f?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+     card.style.backgroundSize = "cover";
+     card.style.backgroundPosition = "center";
+     card.style.backgroundRepeat = "no-repeat";
+     card.style.backgroundAttachment = "fixed";
+   }
+
+   else if(data.weather[0].main == "Drizzle"){
+    weatherIcon.src = "./weather-app-img/images/drizzle.png";
+     card.style.backgroundImage = "url('https://images.unsplash.com/photo-1748897364620-2c256709066d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+     card.style.backgroundSize = "cover";
+     card.style.backgroundPosition = "center";
+     card.style.backgroundRepeat = "no-repeat";
+     card.style.backgroundAttachment = "fixed";
+   }
+
+   else if(data.weather[0].main == "Mist"){
+    weatherIcon.src = "./weather-app-img/images/mist.png";
+     card.style.backgroundImage = "url('https://plus.unsplash.com/premium_photo-1675824629278-e072280ea44f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+     card.style.backgroundSize = "cover";
+     card.style.backgroundPosition = "center";
+     card.style.backgroundRepeat = "no-repeat";
+     card.style.backgroundAttachment = "fixed";
+   }
+
+    }
+
+    searchBtn.addEventListener("click", ()=>{
+         checkWeather(searchBox.value);
+ })
+     
+   
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+body{
+    margin: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark{
+    background-color: aliceblue;;
+    background-color: black;
+    color: #fff;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,td{
+    padding: 8px;
+    border: 1px solid rgb(197, 189, 189);
+    text-align: center;
+}
+
+.highlight{
+    background-color: aliceblue;
+    font-weight: 700;
+    color: black;
+}
+
+.highlight-fail{
+    background-color: red;
+    font-weight: 700;
+    color: aliceblue;
+}
+.delete-btn{
+    background-color: red;
+    color: aliceblue;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#addBtn{
+    cursor: pointer;
+}
+
+#toggletheme{
+    cursor: pointer;
+}

@@ -1,0 +1,139 @@
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+  transition: background 0.3s, color 0.3s;
+  color: #333;
+}
+body.dark {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+h2 {
+  text-align: center;
+}
+.controls {
+  text-align: center;
+  margin: 20px;
+}
+.controls input {
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.controls button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+.controls button:hover {
+  background-color: #555;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.gallery img {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+body.dark .modal-content {
+  background: #2a2a2a;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #b60f0f;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+.modal-caption h3 {
+  margin: 0;
+  font-size: 20px;
+}
+.modal-caption p {
+  font-size: 14px;
+  margin: 5px 0 15px;
+}
+.modal-controls button,
+.modal-controls a {
+  margin: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.modal-controls button:hover,
+.modal-controls a:hover {
+  background-color: #0056b3;
+}
+.like-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: red;
+  display: none;
+}
+.liked .like-icon {
+  display: block;
+}
