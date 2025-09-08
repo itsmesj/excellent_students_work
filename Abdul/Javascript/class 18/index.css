@@ -1,0 +1,115 @@
+
+  :root {
+    --primary-color: #3b82f6; /* Blue */
+    --accent-color: #ec4899;  /* Pink */
+    --background-color: #f9fafb;
+    --text-color: #111827;
+    --table-header-bg: #3b82f6;
+    --table-header-text: #ffffff;
+    --table-row-hover: #ec4899;
+  }
+
+  .container{
+    width: 1240px;
+    margin: 0 auto;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 2rem;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+
+  input {
+    display: inline-block;
+    margin: 0.5rem 1rem 1rem 0;
+    font-weight: bold;
+  }
+
+  input {
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 0.4rem 0.7rem;
+    margin-left: 0.3rem;
+    outline: none;
+    transition: border 0.2s ease;
+  }
+
+  input:focus {
+    border-color: var(--accent-color);
+  }
+
+  button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.5rem 1rem 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #d9468d;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  thead {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-text);
+  }
+
+  th, td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f3f4f6;
+  }
+
+  /* Grade hover animation */
+  td:nth-child(3):hover {
+    background-color: var(--table-row-hover);
+    color: white;
+    transition: 0.4s ease;
+    transform: scale(1.05);
+    border-radius: 10px;
+  }
+
+  /* Dark theme support (optional JS toggle) */
+  body.dark {
+    --background-color: #1f2937;
+    --text-color: #f9fafb;
+    --table-header-bg: #2563eb;
+    --table-header-text: #ffffff;
+  }
+
+  .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .head input,#addBtn,#toggleTheme {
+    width: 100% !important;
+  }

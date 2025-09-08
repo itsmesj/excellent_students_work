@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- <span class="material-icons">shopping_cart</span>
+ -->
+<body>
+    <nav class="navbar">
+  <div class="nav-left">
+    <img src="./images/logo.jpeg" alt="Logo" class="logo">
+    <span class="nav-brand">My Demo Shop</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Details</a></li>
+    <li><a href="#">Category</a></li>
+  </ul>
+  <a href="#cart" style="text-decoration: none; color: #fff;">
+  <div class="nav-icons">
+    <span class="material-icons">shopping_cart</span>
+      <span id="cart-count" class="cart-badge">0</span>
+  </div>
+  </a>
+</nav>
+
+<section>
+  <header class="header">
+    <div class="headerImg">
+      <img src="./images/banner.png" alt="">
+    </div>
+    <div class="headerContent">
+    <h1>Welcome to our store !</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos placeat quaerat cupiditate at quis iusto deserunt error iste molestiae itaque aut cum earum officia aliquam, corporis eum minus! Nobis, inventore. Suscipit deleniti adipisci, odit eius fuga iste soluta consequatur sit cupiditate hic esse dolor recusandae? Excepturi voluptate quisquam nostrum nobis.
+      </p>
+    </div>
+  </header>
+</section>
+
+<div class="space"></div>
+
+<h1>My Demo Shop</h1>
+
+
+<h2>Products</h2>
+<div id="productList" class="grid"></div>
+
+<div class="space"></div>
+
+
+    <h2 id="cart">Your Cart</h2>
+    <div id="emptyMsg">Cart is empty</div>
+    <p><strong>Total: ₹<span id="total">0</span></strong></p>
+    <button id="checkoutBtn" class="btn-primary" onclick="showCheckout()" disabled>Proceed to Payment</button>
+    
+    <div id="checkout" class="card" style="margin-top: 2rem;">
+      <h2>Order Summary</h2>
+      <div id="orderSummary"></div>
+      <p><strong>Grand Total: ₹<span id="grandTotal">0</span></strong></p>
+      <button class="btn-primary" onclick="pay()">Pay Now</button>
+      <button class="btn-secondary" onclick="cancelCheckout()">Cancel</button>
+    </div>
+    
+    
+    
+    <div class="space"></div>
+
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>My Demo Shop</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, aspernatur!</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: info@demoshop.com</p>
+      <p>Phone: +91 9876543210</p>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 My Demo Shop. All rights reserved.</p>
+  </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

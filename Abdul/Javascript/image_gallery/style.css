@@ -1,0 +1,150 @@
+ :root {
+      --bg-color: #111;
+      --text-color: #fff;
+      --card-bg: #222;
+    }
+    body.light-mode {
+      --bg-color: #f0f0f0;
+      --text-color: #111;
+      --card-bg: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .theme-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      
+    }
+    .theme-toggle button {
+      padding: 8px 16px;
+      border: none;
+      background: #b11b1b;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px;
+    }
+    .image-card {
+      background: var(--card-bg);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    .like-btn {
+      margin-top: 8px;
+      cursor: pointer;
+      color: #ff4d4d;
+      font-size: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .modal img {
+      max-width: 90vw;
+      max-height: 70vh;
+      border-radius: 10px;
+      animation: zoomIn 0.4s ease-in-out;
+    }
+    .caption {
+      color: #ddd;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 35px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .thumbnails {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .thumbnails img {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    .thumbnails img.active {
+      opacity: 1;
+      border: 2px solid #fff;
+    }
+    .modal-controls {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .modal-controls button {
+      background: #333;
+      border: none;
+      padding: 8px 12px;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .modal-controls button:hover {
+      background: #555;
+    }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
